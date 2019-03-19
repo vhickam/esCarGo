@@ -3,9 +3,9 @@ const Package = require('../models/Package')
 
 const router = express.Router();
 
-// Route to get all packages
+// Route to get my packages
 router.get('/', (req, res, next) => {
-  Package.find()
+  Package.find({shipper: req.user._id})
     .then(packages => {
       res.json(packages);
     })
@@ -15,7 +15,8 @@ router.get('/', (req, res, next) => {
 // Route to add a package
 router.post('/', (req, res, next) => {
   let {name, size, pickup, dropoff, duedate} = req.body
-  Package.create({name, size, pickup, dropoff, duedate})
+  const shipper =  req.user._id;
+  Package.create({name, size, pickup, dropoff, duedate, shipper})
     .then(package => {
       res.json({
         success: true,

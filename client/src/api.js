@@ -77,6 +77,13 @@ export default {
       .catch(errHandler)
   },
 
+  getTheTrip() {
+    return service
+    .get('/trip/:id')
+    .then(res => res.data)
+    .catch(errHandler)
+  },
+
   getPackages() {
     return service
       .get('/packages')

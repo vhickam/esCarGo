@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import api from '../../api';
-import { userInfo } from 'os';
-import { Route, Link, NavLink, Switch } from 'react-router-dom';
+//import { userInfo } from 'os';
+import {Link} from 'react-router-dom';
 
 export default class Profile extends Component {
   constructor(props) {

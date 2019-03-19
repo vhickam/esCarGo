@@ -3,7 +3,7 @@ const Trip = require('../models/Trip')
 
 const router = express.Router();
 
-// Route to get all trips
+// Route to get my trips
 router.get('/', (req, res, next) => {
   Trip.find({driver: req.user._id})
     .then(trips => {
@@ -22,6 +22,15 @@ router.post('/', (req, res, next) => {
         success: true,
         trip
       });
+    })
+    .catch(err => next(err))
+});
+
+//route to get trip details
+router.get('/trip/:id', (req, res, next) => {
+  Trip.findById(req.params.id)
+    .then(thetrip => {
+      res.json(thetrip);
     })
     .catch(err => next(err))
 });

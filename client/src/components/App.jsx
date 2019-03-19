@@ -3,6 +3,7 @@ import { Route, Link, NavLink, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import Trips from './pages/Trips';
 import AddTrip from './pages/AddTrip';
+import TripDetails from './pages/TripDetails';
 import Packages from './pages/Packages';
 import AddPackage from './pages/AddPackage';
 import Secret from './pages/Secret';
@@ -38,12 +39,11 @@ export default class App extends Component {
         </header>
         <Switch>
           <Route path="/" exact component={Home} />
-          {/* <Route path="/countries" component={Countries} />
-          <Route path="/add-country" component={AddCountry} /> */}
           <Route path='/add-package' component={AddPackage} />
           <Route path='/packages' component={Packages} />
           <Route path='/add-trip' component={AddTrip} />
           <Route path='/trips' component={Trips} />
+          <Route path='/trip/:id' component={TripDetails}></Route>
           <Route path="/signup" component={Signup} />
           <Route path="/login" component={Login} />
           <Route path="/profile" component={Profile} />

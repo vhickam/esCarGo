@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import api from '../../api';
+import {Link} from 'react-router-dom';
 
 export default class Trips extends Component {
   constructor(props) {
@@ -12,7 +13,9 @@ export default class Trips extends Component {
   showTrips() {
     let list = this.state.trips.map((trip) => {
       return (
-        <li key={trip._id}>{trip.date.substring(0, 10)}</li>
+        <li key={trip._id}>
+          <Link to={`/trip/${trip._id}`}> {trip.date.substring(0, 10)} </Link>
+        </li>
       )
     })
     return list;
