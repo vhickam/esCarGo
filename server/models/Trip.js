@@ -6,7 +6,7 @@ const tripSchema = new Schema({
   start: String,
   end: String,
   packages: Array,
-  driver: String,
+  driver: Schema.Types.ObjectId,
   pickupspots: Array,
   dropoffspots: Array,
   earnings: Number

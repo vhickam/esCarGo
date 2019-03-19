@@ -5,7 +5,7 @@ const router = express.Router();
 
 // Route to get all trips
 router.get('/', (req, res, next) => {
-  Trip.find()
+  Trip.find({driver: req.user._id})
     .then(trips => {
       res.json(trips);
     })
@@ -15,7 +15,8 @@ router.get('/', (req, res, next) => {
 // Route to add a trip
 router.post('/', (req, res, next) => {
   let { date, start, end} = req.body
-  Trip.create({ date, start, end })
+  const driver =  req.user._id;
+  Trip.create({ date, start, end, driver })
     .then(trip => {
       res.json({
         success: true,
