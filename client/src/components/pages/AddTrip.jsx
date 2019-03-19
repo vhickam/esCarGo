@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import api from '../../api';
 
 
-export default class AddCountry extends Component {
+export default class AddTrip extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -22,7 +22,7 @@ export default class AddCountry extends Component {
 
   handleClick(e) {
     e.preventDefault()
-    console.log(this.state.name, this.state.description)
+   
     let data = {
       date: this.state.date,
       start: this.state.start,

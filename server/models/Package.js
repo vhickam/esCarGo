@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const packageSchema = new Schema({
   name: String,
-  size: Number,
+  size: String,
   duedate: Date,
   owner: String,
   driver: String,

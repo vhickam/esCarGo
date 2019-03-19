@@ -77,6 +77,21 @@ export default {
       .catch(errHandler)
   },
 
+  getPackages() {
+    return service
+      .get('/packages')
+      .then(res => res.data)
+      .catch(errHandler)
+  },
+
+  addPackage(body) {
+    return service
+      .post('/packages', body)
+      .then(res => res.data)
+      .catch(errHandler)
+  },
+
+
   getSecret() {
     return service
       .get('/secret')

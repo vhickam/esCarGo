@@ -22,20 +22,24 @@ export default class Profile extends Component {
         </div>
       )
     }
+
+    else return (
+      <div>
+          <Link to='/add-package'>Add Package</Link>
+          <br />
+          <Link to='/packages'>Packages</Link>
+        </div>
+    )
   }
   render() {
     return (
       <div className="Profile">
        <h1>{api.getLocalStorageUser().firstname}'s Profile</h1>
-
+      
         {this.getUserType()}
 
       </div>
     );
   }
-  // componentDidMount() {
-  //   api.getSecret()
-  //     .then(data => this.setState({ secret: data.secret }))
-  //     .catch(err => this.setState({ message: err.toString() }))
-  // }
+
 }

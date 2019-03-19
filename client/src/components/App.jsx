@@ -3,6 +3,8 @@ import { Route, Link, NavLink, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import Trips from './pages/Trips';
 import AddTrip from './pages/AddTrip';
+import Packages from './pages/Packages';
+import AddPackage from './pages/AddPackage';
 import Secret from './pages/Secret';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
@@ -38,6 +40,8 @@ export default class App extends Component {
           <Route path="/" exact component={Home} />
           {/* <Route path="/countries" component={Countries} />
           <Route path="/add-country" component={AddCountry} /> */}
+          <Route path='/add-package' component={AddPackage} />
+          <Route path='/packages' component={Packages} />
           <Route path='/add-trip' component={AddTrip} />
           <Route path='/trips' component={Trips} />
           <Route path="/signup" component={Signup} />
