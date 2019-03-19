@@ -14,7 +14,7 @@ export default class Signup extends Component {
       city: '',
       usstate: '',
       zip: '',
-      type: '',
+      type: 'driver',
       message: null
     }
     this.handleInputChange = this.handleInputChange.bind(this)
