@@ -7,11 +7,14 @@ const userSchema = new Schema({
   type: String,
   firstname: String,
   lastname: String,
-  license: String,
-  carmake: String,
-  carmodel: String,
-  caryear: String,
+  // license: String,
+  // carmake: String,
+  // carmodel: String,
+  // caryear: String,
   address: String,
+  city: String,
+  usstate: String,
+  zip: String,
   trips: Array,
   packages: Array
 }, {
