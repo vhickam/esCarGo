@@ -47,13 +47,13 @@ app.use(session({
 }))
 require('./passport')(app)
 
-
 app.use('/api', require('./routes/index'))
 app.use('/api', require('./routes/auth'))
 app.use('/api/countries', require('./routes/countries'))
 app.use('/api/trips', require('./routes/trips'))
 app.use('/api/trip/:id', require('./routes/trips'))
 app.use('/api/packages', require('./routes/packages'))
+// app.use('/api/allpackages', require('./routes/packages'))
 
 // For any routes that starts with "/api", catch 404 and forward to error handler
 app.use('/api/*', (req, res, next) => {

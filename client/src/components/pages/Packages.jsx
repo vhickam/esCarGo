@@ -9,6 +9,18 @@ export default class Packages extends Component {
     }
   }
 
+  componentDidMount() {
+    api.getPackages()
+      .then(packages => {
+        console.log(packages)
+        this.setState({
+          packages: packages
+        })
+      })
+      .catch(err => console.log(err))
+  }
+
+
   showPackages() {
     let list = this.state.packages.map((p) => {
       return (
@@ -28,14 +40,5 @@ export default class Packages extends Component {
       </div>
     );
   }
-  componentDidMount() {
-    api.getPackages()
-      .then(packages => {
-        console.log(packages)
-        this.setState({
-          packages: packages
-        })
-      })
-      .catch(err => console.log(err))
-  }
+  
 }

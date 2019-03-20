@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import api from '../../api';
 import {Link} from 'react-router-dom';
-import { isNullOrUndefined } from 'util';
+
 
 export default class Trips extends Component {
   constructor(props) {
@@ -23,8 +23,8 @@ export default class Trips extends Component {
   }
 
   showthePackages() {
-    console.log('this is it')
-    console.log(this.state.thetrip.packages)
+   // console.log('this is it')
+    //console.log(this.state.thetrip.packages)
     const thepackages = this.state.thetrip.packages;
     if(thepackages === undefined || thepackages.length === 0){
       return (
@@ -54,6 +54,8 @@ export default class Trips extends Component {
         End: {this.state.thetrip.end}
         <br />
         {this.showthePackages()}
+        <br />
+        <Link to='/allpackages'>Add Packages to Trip</Link>
       </div>
     );
   }

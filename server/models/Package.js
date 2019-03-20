@@ -5,8 +5,8 @@ const packageSchema = new Schema({
   name: String,
   size: String,
   duedate: Date,
+  shipper: Schema.Types.ObjectId,
   driver: Schema.Types.ObjectId,
-  driver: String,
   pickup: String,
   dropoff: String,
   price: Number

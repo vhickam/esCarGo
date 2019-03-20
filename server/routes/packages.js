@@ -3,14 +3,31 @@ const Package = require('../models/Package')
 
 const router = express.Router();
 
+
+router.get('/test', (req, res, next) => {
+  console.log('test')
+});
+
+// Route to get all packages
+router.get('/all', (req, res, next) => {
+  console.log('all')
+  Package.find()
+    .then(allpackages => {
+      res.json(allpackages);
+    })
+    .catch(err => next(err))
+});
+
 // Route to get my packages
 router.get('/', (req, res, next) => {
-  Package.find({shipper: req.user._id})
+  console.log('shipper')
+  Package.find({shipper: req.user._id}) //{shipper: req.user._id}
     .then(packages => {
       res.json(packages);
     })
     .catch(err => next(err))
 });
+
 
 // Route to add a package
 router.post('/', (req, res, next) => {

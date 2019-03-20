@@ -84,6 +84,13 @@ export default {
     .catch(errHandler)
   },
 
+  getAllPackages() {
+    return service
+      .get('packages/all')
+      .then(res => res.data)
+      .catch(errHandler)
+  },
+
   getPackages() {
     return service
       .get('/packages')
