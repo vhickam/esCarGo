@@ -34,7 +34,7 @@ export default class Trips extends Component {
   componentDidMount() {
     api.getTrips()
       .then(trips => {
-        console.log(trips)
+        //console.log(trips)
         this.setState({
           trips: trips
         })

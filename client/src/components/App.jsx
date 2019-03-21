@@ -7,6 +7,7 @@ import TripDetails from './pages/TripDetails';
 import Packages from './pages/Packages';
 import AllPackages from './pages/AllPackages';
 import AddPackage from './pages/AddPackage';
+//import AddPtoTrip from './pages/AddPtoTrip';
 import Secret from './pages/Secret';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
@@ -43,6 +44,7 @@ export default class App extends Component {
           <Route path='/add-package' component={AddPackage} />
           <Route path='/packages' component={Packages} />
           <Route path='/allpackages' component={AllPackages} />
+          {/* <Route path='/add-to-trip/:pid' component={AddPtoTrip} /> */}
           <Route path='/add-trip' component={AddTrip} />
           <Route path='/trips' component={Trips} />
           <Route path='/trip/:id' component={TripDetails}></Route>

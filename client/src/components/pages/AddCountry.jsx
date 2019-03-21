@@ -23,7 +23,7 @@ export default class AddCountry extends Component {
 
   handleClick(e) {
     e.preventDefault()
-    console.log(this.state.name, this.state.description)
+    //console.log(this.state.name, this.state.description)
     let data = {
       name: this.state.name,
       capitals: this.state.capitals,

@@ -35,4 +35,21 @@ router.get('/trip/:id', (req, res, next) => {
     .catch(err => next(err))
 });
 
+
+// Route to add a package to trip
+router.post('/all', (req, res, next) => {
+  let { packageID } = req.body
+
+  Trip.update({_id: req.params.id}, {$push: {packages: packageID}})
+  //const driver =  req.user._id;
+  // Trip.create({ date, start, end, driver })
+  //   .then(trip => {
+  //     res.json({
+  //       success: true,
+  //       trip
+  //     });
+  //   })
+  //   .catch(err => next(err))
+});
+
 module.exports = router;

@@ -91,6 +91,14 @@ export default {
       .catch(errHandler)
   },
 
+  addPtoTrip(body) {
+    return service
+      .post('/packages/all', body)
+      .then(res => res.data)
+      .catch(errHandler)
+  },
+
+
   getPackages() {
     return service
       .get('/packages')
@@ -105,6 +113,7 @@ export default {
       .catch(errHandler)
   },
 
+ 
 
   getSecret() {
     return service

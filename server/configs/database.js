@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 // Don't forget to set "MONGODB_URI" in ~/server/.env
 const uri = process.env.MONGODB_URI || `mongodb+srv://fitpal:fitpal@fitpal-ebrlo.mongodb.net/escargo?retryWrites=true`;
-console.log(uri)
+//console.log(uri)
 mongoose
   .connect(uri, { useNewUrlParser: true })
   .then(x => {
