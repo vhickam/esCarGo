@@ -1,5 +1,6 @@
 const express = require('express');
 const Package = require('../models/Package')
+const Trip = require('../models/Trip')
 
 const router = express.Router();
 

@@ -8,11 +8,12 @@ export default class AllPackages extends Component {
     super(props)
     this.state = {
       allpackages: [],
-      packageID: ''
+      //packageID: ''
     }
   }
 
   componentDidMount() {
+  
     api.getAllPackages()
       .then(allpackages => {
         //console.log(allpackages)
@@ -27,9 +28,10 @@ export default class AllPackages extends Component {
 
   handleClick(e, pid) {
     e.preventDefault()
-    this.setState({packageID: pid})
+    //this.setState({packageID: pid})
     let data = {
-      packageID: this.state.packageID,
+      packageID: pid,
+      
     }
     api.addPtoTrip(data)
       .then(result => {
@@ -63,6 +65,7 @@ export default class AllPackages extends Component {
     return (
       <div className="AllPackages">
         <h2>List of packages</h2>
+        
         {this.showPackages()}
       </div>
     );
