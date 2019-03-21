@@ -26,13 +26,15 @@ export default class AllPackages extends Component {
 
 
 
-  handleClick(e, pid) {
+  handleClick(e, pckg) {
     e.preventDefault()
     //this.setState({packageID: pid})
     let data = {
-      packageID: pid,
-      
+      package: pckg,
+      tripID: this.props.match.params.tid
     }
+   // console.log(this.props.match.params.tid)
+    //debugger
     api.addPtoTrip(data)
       .then(result => {
         console.log('SUCCESS!')
@@ -53,7 +55,7 @@ export default class AllPackages extends Component {
   showPackages() {
     let list = this.state.allpackages.map((p) => {
       return (
-        <li key={p._id}>{p.name}  <button onClick={(e) => this.handleClick(e, p._id)}>Add</button>    </li>       //{<Link to={`/add-to-trip/${p._id}`}>Add</Link>} 
+        <li key={p._id}>{p.name}  <button onClick={(e) => this.handleClick(e, p)}>Add</button>    </li>       //{<Link to={`/add-to-trip/${p._id}`}>Add</Link>} 
       )
     })
     return list;
@@ -62,6 +64,7 @@ export default class AllPackages extends Component {
   
 
   render() {
+    
     return (
       <div className="AllPackages">
         <h2>List of packages</h2>

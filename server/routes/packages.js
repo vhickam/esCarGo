@@ -12,14 +12,17 @@ router.get('/test', (req, res, next) => {
 
 // Route to add a package to trip
 router.post('/all', (req, res, next) => {
-  let { packageID } = req.body
-  //console.log("the trip id:", req.params.tid)
-  console.log("the package id:", packageID)
+  let { package, tripID } = req.body
+  // console.log("the trip id:", tripID)
+  // console.log("the package id:", packageID)
 
-  // Trip.update({_id: req.params.tid}, {$push: {packages: packageID}})
-  // .then(mod => {
-  //   res.redirect('back');
-  // })
+  Trip.update(
+    {_id: tripID}, 
+    {$push: {packages: package}}
+    ).exec()
+  .then(mod => {
+    res.redirect('back');
+  })
 
 });
 

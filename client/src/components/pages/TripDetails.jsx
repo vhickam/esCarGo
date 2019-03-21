@@ -7,7 +7,7 @@ export default class Trips extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      thetrip: ''
+      thetrip: '',
     }
   }
 

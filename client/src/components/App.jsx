@@ -1,3 +1,6 @@
+//AIzaSyAFnt4FO4StD3LpFa2W79ffdzc-FuJ7Jb8
+
+
 import React, { Component } from 'react';
 import { Route, Link, NavLink, Switch } from 'react-router-dom';
 import Home from './pages/Home';
@@ -43,7 +46,7 @@ export default class App extends Component {
           <Route path="/" exact component={Home} />
           <Route path='/add-package' component={AddPackage} />
           <Route path='/packages' component={Packages} />
-          <Route exact path='/allpackages/:tid' component={AllPackages} />
+          <Route path='/allpackages/:tid' component={AllPackages} />
           {/* <Route path='/add-to-trip/:pid' component={AddPtoTrip} /> */}
           <Route path='/add-trip' component={AddTrip} />
           <Route path='/trips' component={Trips} />
