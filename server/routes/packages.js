@@ -8,9 +8,24 @@ router.get('/test', (req, res, next) => {
   console.log('test')
 });
 
+
+// Route to add a package to trip
+router.post('/all', (req, res, next) => {
+  let { packageID } = req.body
+  //console.log("the trip id:", req.params.tid)
+  console.log("the package id:", packageID)
+
+  // Trip.update({_id: req.params.tid}, {$push: {packages: packageID}})
+  // .then(mod => {
+  //   res.redirect('back');
+  // })
+
+});
+
+
 // Route to get all packages
 router.get('/all', (req, res, next) => {
-  console.log('all')
+  //console.log('all')
   Package.find()
     .then(allpackages => {
       res.json(allpackages);

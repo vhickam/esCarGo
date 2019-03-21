@@ -36,7 +36,7 @@ export default class AllPackages extends Component {
         console.log('SUCCESS!')
         this.setState({
           packageID: "",
-          message: `Your trip on '${this.state.date}' has been created`
+          message: `Package has been added`
         })
         setTimeout(() => {
           this.setState({

@@ -55,7 +55,7 @@ export default class Trips extends Component {
         <br />
         {this.showthePackages()}
         <br />
-        <Link to='/allpackages'>Add Packages to Trip</Link>
+        <Link to={`/allpackages/${this.state.thetrip._id}`}>Add Packages to Trip</Link>
       </div>
     );
   }

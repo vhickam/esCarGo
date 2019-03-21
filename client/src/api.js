@@ -93,7 +93,7 @@ export default {
 
   addPtoTrip(body) {
     return service
-      .post('/packages/all', body)
+      .post('packages/all', body)
       .then(res => res.data)
       .catch(errHandler)
   },

@@ -43,7 +43,7 @@ export default class App extends Component {
           <Route path="/" exact component={Home} />
           <Route path='/add-package' component={AddPackage} />
           <Route path='/packages' component={Packages} />
-          <Route path='/allpackages' component={AllPackages} />
+          <Route exact path='/allpackages/:tid' component={AllPackages} />
           {/* <Route path='/add-to-trip/:pid' component={AddPtoTrip} /> */}
           <Route path='/add-trip' component={AddTrip} />
           <Route path='/trips' component={Trips} />
