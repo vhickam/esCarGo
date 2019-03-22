@@ -85,11 +85,11 @@ export default class AllPackages extends Component {
         <table className = "table trippackagestable">
           <thead className="thead">
             <tr>
-              <th scope="col">#</th>
+              <th scope="col">Name</th>
               <th scope="col">Pickup</th>
               <th scope="col">Dropoff</th>
               <th scope="col">Size</th>
-              <th scope="col">Add</th>
+              <th scope="col">Delete</th>
             </tr>
             </thead>
             <tbody>

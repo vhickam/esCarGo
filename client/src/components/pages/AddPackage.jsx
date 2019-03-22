@@ -59,7 +59,7 @@ export default class AddPackage extends Component {
           Name (only you can see): <input type="text" value={this.state.name} name="name" onChange={this.handleInputChange} required/> <br />
           Pickup Address: <input type="text" value={this.state.pickup} name="pickup" onChange={this.handleInputChange} required /> <br />
           Dropoff Address: <input type="text" value={this.state.dropoff} name="dropoff" onChange={this.handleInputChange} required/> <br />
-          Size: <select name="type" value={this.state.type} onChange={this.handleInputChange} required>
+          Size: <select name="size" value={this.state.type} onChange={this.handleInputChange} required>
                   <option value='size'>Select Size</option>
                   <option value='xsmall'>X-Small</option>
                   <option value='small'>Small</option>
