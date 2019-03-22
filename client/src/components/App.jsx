@@ -33,15 +33,46 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <NavLink to="/" exact>Home</NavLink>
-          {/* <NavLink to="/countries">Countries</NavLink> */}
-          {/* <NavLink to="/add-country">Add country</NavLink> */}
+        <header className="App-header navbar navbar-expand-lg">
+          <NavLink to="#" className="navbar-brand">  <img src="images/snail.png" width="50" height="50" className="d-inline-block align-top" alt=""></img>
+          </NavLink>
+
+          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>  
+
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+              <li className="nav-item active">
+                <NavLink to="/" exact>Home</NavLink>
+              </li>
+              <li className="nav-item">
+              {!api.isLoggedIn() && <NavLink to="/signup">Signup</NavLink>}
+              </li>
+              <li className="nav-item">
+              {!api.isLoggedIn() && <NavLink to="/login">Login</NavLink>}
+              </li>
+              <li className="nav-item">
+              {api.isLoggedIn() && <Link to="/" onClick={(e) => this.handleLogoutClick(e)}>Logout</Link>}
+              </li>
+              <li className="nav-item">
+              <NavLink to="/profile">Profile</NavLink>
+              </li>
+            </ul>
+          </div>
+
+          {/* <NavLink to="/" exact>Home</NavLink>
           {!api.isLoggedIn() && <NavLink to="/signup">Signup</NavLink>}
           {!api.isLoggedIn() && <NavLink to="/login">Login</NavLink>}
           {api.isLoggedIn() && <Link to="/" onClick={(e) => this.handleLogoutClick(e)}>Logout</Link>}
-          <NavLink to="/profile">Profile</NavLink>
+          <NavLink to="/profile">Profile</NavLink> */}
         </header>
+        
+        
+        
+        
+        
+        
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path='/add-package' component={AddPackage} />
