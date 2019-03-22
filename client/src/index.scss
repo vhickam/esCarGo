@@ -127,7 +127,7 @@ body {
   max-width: 330px;
   padding: 30px;
   margin: 0 auto;
-  background-color: white;
+  background-color: #c49d9d;
   border-radius: 30px;
   box-shadow: 0 0 100px #000;
 
@@ -198,4 +198,22 @@ button{
 
 h2{
   color: $primary;
+}
+
+.logindiv{
+  background-color: #c49d9d;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 40vh;
+  border-radius: 20px;
+  padding: 10px;
+
+  form{
+    margin-top: 20px;
+  }
+}
+
+.login-pic{
+  margin-bottom: 10px;
 }

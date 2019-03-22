@@ -33,7 +33,8 @@ onClose = props => {
   render() {
     return (
       <div>
-          <Map
+        <img src="/images/snail.png" alt="snail" width="700" height="auto"></img>
+          {/* <Map
         google={this.props.google}
         zoom={14}
         style={mapStyles}
@@ -52,7 +53,7 @@ onClose = props => {
             <h4>{this.state.selectedPlace.name}</h4>
           </div>
         </InfoWindow>
-      </Map>
+      </Map> */}
     </div>
 
     );

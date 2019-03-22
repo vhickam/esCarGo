@@ -52,6 +52,7 @@ export default class Signup extends Component {
       <div className="Signup">
       <div className="container login-form-container">
         <h2>Signup</h2>
+        <img src="/images/snail.png" alt="snail" width="150" height="auto"></img>
         <form className='form-signin login-form'>
             Email
             <input type="email" value={this.state.username} name="username" onChange={this.handleInputChange} required autoFocus /> 

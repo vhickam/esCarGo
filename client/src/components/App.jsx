@@ -44,20 +44,22 @@ export default class App extends Component {
 
           <div className="navbar" id="navbarNav">
             <ul className="navbar-nav">
-              <li className="nav-item active">
+              {/* <li className="nav-item active">
                 <NavLink to="/" exact>Home</NavLink>
-              </li>
+              </li> */}
               <li className="nav-item">
               {!api.isLoggedIn() && <NavLink to="/signup">Signup</NavLink>}
               </li>
               <li className="nav-item">
               {!api.isLoggedIn() && <NavLink to="/login">Login</NavLink>}
               </li>
-              <li className="nav-item">
-              {api.isLoggedIn() && <Link to="/" onClick={(e) => this.handleLogoutClick(e)}>Logout</Link>}
-              </li>
+              
               <li className="nav-item">
               <NavLink to="/profile">Profile</NavLink>
+              </li>
+
+              <li className="nav-item">
+              {api.isLoggedIn() && <Link to="/" onClick={(e) => this.handleLogoutClick(e)}>Logout</Link>}
               </li>
             </ul>
           </div>

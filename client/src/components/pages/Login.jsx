@@ -32,14 +32,19 @@ export default class Login extends Component {
     return (
       <div className="Login">
         <h2>Login</h2>
+        <div className="logindiv">
+        <img classname="login-pic" src="/images/snail.png" alt="snail" width="150" height="auto"></img>
+        <br/>
         <form>
           Username: <input type="text" value={this.state.username} name="username" onChange={this.handleInputChange} /> <br />
+          <br/>
           Password: <input type="password" value={this.state.password} name="password" onChange={this.handleInputChange} /> <br />
-          <button onClick={(e) => this.handleClick(e)}>Login</button>
+          <br/> <button onClick={(e) => this.handleClick(e)}>Login</button>
         </form>
         {this.state.message && <div className="info info-danger">
           {this.state.message}
         </div>}
+        </div>
       </div>
     );
   }
