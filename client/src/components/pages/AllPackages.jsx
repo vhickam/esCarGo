@@ -53,9 +53,18 @@ export default class AllPackages extends Component {
 
   
   showPackages() {
-    let list = this.state.allpackages.map((p) => {
+    let list = this.state.allpackages.map((p,i) => {
       return (
-        <li key={p._id}>{p.name}  <button onClick={(e) => this.handleClick(e, p)}>Add</button>    </li>       //{<Link to={`/add-to-trip/${p._id}`}>Add</Link>} 
+       // <li key={p._id}>{p.name}  <button onClick={(e) => this.handleClick(e, p)}>Add</button>    </li>       //{<Link to={`/add-to-trip/${p._id}`}>Add</Link>} 
+        
+        <tr>
+            <th scope="row">{i+1}</th>
+            <td>{p.pickup}</td>
+            <td>{p.dropoff}</td>
+            <td>{p.size}</td>
+            <td><button onClick={(e) => this.handleClick(e, p)}>Add</button></td>
+          </tr>   
+
       )
     })
     return list;
@@ -67,9 +76,32 @@ export default class AllPackages extends Component {
     
     return (
       <div className="AllPackages">
-        <h2>List of packages</h2>
+        <img src="/images/snail.png" alt="snail" width="150" height="auto"></img>
+        <h2>Available Packages</h2>
         
-        {this.showPackages()}
+        
+
+        <div className="trippackages">
+        <table className = "table trippackagestable">
+          <thead className="thead">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Pickup</th>
+              <th scope="col">Dropoff</th>
+              <th scope="col">Size</th>
+              <th scope="col">Add</th>
+            </tr>
+            </thead>
+            <tbody>
+            {this.showPackages()}
+            </tbody>
+
+          
+          
+        
+        </table>
+        </div>
+
       </div>
     );
   }

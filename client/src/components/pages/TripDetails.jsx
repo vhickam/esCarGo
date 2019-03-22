@@ -9,7 +9,7 @@ export default class Trips extends Component {
     super(props)
     this.state = {
       thetrip: '',
-      pnum: '1'
+      message: ''
     }
   }
 
@@ -24,10 +24,11 @@ export default class Trips extends Component {
       .catch(err => console.log(err))
   }
 
-  showthePackages() {
+  showthePackages(trip) {
    // console.log('this is it')
     //console.log(this.state.thetrip.packages)
-    const thepackages = this.state.thetrip.packages;
+    const thepackages = trip.packages;
+    console.log(thepackages)
    
     if(thepackages === undefined || thepackages.length === 0){
       return (
@@ -45,6 +46,7 @@ export default class Trips extends Component {
             <td>{p.pickup}</td>
             <td>{p.dropoff}</td>
             <td>{p.size}</td>
+            <td><button>Remove</button></td>
           </tr>   
         )
       })
@@ -53,28 +55,63 @@ export default class Trips extends Component {
     }
   }
 
+
+  handleClick(e, trip) {
+    e.preventDefault()
+    //this.setState({packageID: pid})
+    let data = {
+      tripID: trip
+    }
+   // console.log(this.props.match.params.tid)
+    //debugger
+    api.deleteTrip(data)
+      .then(result => {
+        console.log('SUCCESS!')
+        // this.setState({
+        //   packageID: "",
+        //   message: `Package has been added`
+        // })
+        setTimeout(() => {
+          this.setState({
+            message: null
+          })
+        }, 2000)
+      })
+      .catch(err => this.setState({ message: err.toString() }))
+  }
+
   
 
   render() {
     return (
       <div className="Trips">
+      <img src="/images/snail.png" alt="snail" width="150" height="auto"></img>
         <h2>Trip Details</h2>
+        <div className="row">
+        <div className="col-6">
         Start: {this.state.thetrip.start} 
-        <br />
+        </div>
+        <div className="col-6">
         End: {this.state.thetrip.end}
+        </div>
+        </div>
+       
+        <br />
+       
         <br />
         <div className="trippackages">
         <table className = "table trippackagestable">
           <thead className="thead">
             <tr>
-              <th scope="col">ID</th>
+              <th scope="col">#</th>
               <th scope="col">Pickup</th>
               <th scope="col">Dropoff</th>
               <th scope="col">Size</th>
+              <th scope="col">Remove</th>
             </tr>
             </thead>
             <tbody>
-            {this.showthePackages()}
+            {this.showthePackages(this.state.thetrip)}
             </tbody>
 
           
@@ -84,7 +121,10 @@ export default class Trips extends Component {
         </div>
        
         <br />
-        <Link to={`/allpackages/${this.state.thetrip._id}`}>Add Packages to Trip</Link>
+        <button><Link to={`/allpackages/${this.state.thetrip._id}`}>Add Packages to Trip</Link></button>
+        <br/> <br/>
+        {/* <Link to={`/delete-trip/${this.state.thetrip._id}`}>Delete Trip</Link> */}
+        <button onClick={(e) => this.handleClick(e, this.state.thetrip._id)}>Delete Trip</button>
       </div>
     );
   }

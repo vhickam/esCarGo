@@ -77,7 +77,7 @@ export default {
       .catch(errHandler)
   },
 
-  getTheTrip() {
+  getTheTrip(id) {
     return service
     .get('/trip/:id')
     .then(res => res.data)
@@ -94,6 +94,13 @@ export default {
   addPtoTrip(body) {
     return service
       .post('packages/all', body)
+      .then(res => res.data)
+      .catch(errHandler)
+  },
+
+  deleteTrip(body){
+    return service
+      .get('trips/delete-trip/:id', body)
       .then(res => res.data)
       .catch(errHandler)
   },

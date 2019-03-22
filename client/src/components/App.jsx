@@ -34,8 +34,9 @@ export default class App extends Component {
     return (
       <div className="App">
         <header className="App-header navbar navbar-expand-lg">
-          <NavLink to="#" className="navbar-brand">  <img src="images/snail.png" width="50" height="50" className="d-inline-block align-top" alt=""></img>
-          </NavLink>
+          {/* <NavLink to="#" className="navbar-brand">  <img src="images/snail.png" width="50" height="50" className="d-inline-block align-top" alt=""></img>
+          </NavLink> */}
+          esCarGo
 
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -82,6 +83,7 @@ export default class App extends Component {
           <Route path='/add-trip' component={AddTrip} />
           <Route path='/trips' component={Trips} />
           <Route path='/trip/:id' component={TripDetails}></Route>
+          <Route path='/delete-trip/:id' component={TripDetails}></Route>
           <Route path="/signup" component={Signup} />
           <Route path="/login" component={Login} />
           <Route path="/profile" component={Profile} />

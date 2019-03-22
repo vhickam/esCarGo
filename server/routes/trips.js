@@ -35,17 +35,26 @@ router.get('/trip/:id', (req, res, next) => {
     .catch(err => next(err))
 });
 
+//route to delete trip
+router.get('/delete-trip/:id', (req, res, next) => {
+  Trip.findByIdAndRemove(req.params.id)
+    .then(() => {
+      res.redirect('/profile');
+    })
+    .catch(err => next(err))
+});
+
 
 // Route to add a package to trip
-router.post('/allpackages/:tid', (req, res, next) => {
-  let { packageID } = req.body
-  console.log("the trip id:", req.params.tid)
+// router.post('/allpackages/:tid', (req, res, next) => {
+//   let { packageID } = req.body
+//   console.log("the trip id:", req.params.tid)
 
-  // Trip.update({_id: req.params.tid}, {$push: {packages: packageID}})
-  // .then(mod => {
-  //   res.redirect('back');
-  // })
+//   // Trip.update({_id: req.params.tid}, {$push: {packages: packageID}})
+//   // .then(mod => {
+//   //   res.redirect('back');
+//   // })
 
-});
+// });
 
 module.exports = router;

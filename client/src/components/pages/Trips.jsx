@@ -26,6 +26,8 @@ export default class Trips extends Component {
             <br /> Packages: {trip.packages.length}
           </p>
           <Link to={`/trip/${trip._id}`}> Details </Link>
+          <br />
+          <button>GO</button>
         </div>
         </div>
         </div>
@@ -41,11 +43,13 @@ export default class Trips extends Component {
   render() {
     return (
       <div className="Trips">
+      <img src="/images/snail.png" alt="snail" width="150" height="auto"></img>
         <h2>Your Upcoming Trips</h2>
-        <div className="row">
+        <div className="container trips-container">
+        <div className="row justify-content-center">
         {this.showTrips()}
         </div>
-        
+      </div> 
       </div>
     );
   }
