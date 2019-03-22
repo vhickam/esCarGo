@@ -120,9 +120,11 @@ export default class Profile extends Component {
             <br /> End: {trip.end}
             <br /> Packages: {trip.packages.length}
           </p>
-          <Link to={`/trip/${trip._id}`}> Details </Link>
-          <br />
-          <button>GO</button>
+          <div className="row justify-content-center">
+          <button className="card-button">< Link to={`/trip/${trip._id}`}> Details </ Link> </button>
+          
+          <button className="card-button">GO</button>
+          </div>
         </div>
         </div>
         </div>
