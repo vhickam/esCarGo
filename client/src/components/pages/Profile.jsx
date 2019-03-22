@@ -8,7 +8,8 @@ export default class Profile extends Component {
     super(props)
     this.state = {
       secret: null,
-      message: null
+      message: null,
+     
     }
   }
 

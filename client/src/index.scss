@@ -147,3 +147,31 @@ body {
 .form-signin .form-control:focus {
   z-index: 2;
 }
+
+
+//profile
+.card{
+  width: 18rem;
+}
+
+//trip packages
+.trippackages{
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.thead{
+  color: #c49d9d;
+  background-color: white;
+  border-color: #c49d9d;
+}
+
+.trippackagestable tbody{
+  background-color: #c49d9d;
+  color: white;
+}
+
+.trippackagestable{
+  border: 2px solid #c49d9d;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import api from '../../api';
 import {Link} from 'react-router-dom';
+import '../../index.scss';
 
 
 export default class Trips extends Component {
@@ -8,6 +9,7 @@ export default class Trips extends Component {
     super(props)
     this.state = {
       thetrip: '',
+      pnum: '1'
     }
   }
 
@@ -26,16 +28,24 @@ export default class Trips extends Component {
    // console.log('this is it')
     //console.log(this.state.thetrip.packages)
     const thepackages = this.state.thetrip.packages;
+   
     if(thepackages === undefined || thepackages.length === 0){
       return (
-        <h3>No packages added</h3>
+        <tr>
+          <td>No Packages Added</td></tr>
       )
     }
     else {
       
-      let list = thepackages.map((p) => {
+      let list = thepackages.map((p, i) => {
         return (
-          <li key={p._id}>{p.name}</li>
+          //<li key={p._id}>{p.name}</li>
+          <tr>
+            <th scope="row">{i+1}</th>
+            <td>{p.pickup}</td>
+            <td>{p.dropoff}</td>
+            <td>{p.size}</td>
+          </tr>   
         )
       })
     
@@ -53,7 +63,26 @@ export default class Trips extends Component {
         <br />
         End: {this.state.thetrip.end}
         <br />
-        {this.showthePackages()}
+        <div className="trippackages">
+        <table className = "table trippackagestable">
+          <thead className="thead">
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Pickup</th>
+              <th scope="col">Dropoff</th>
+              <th scope="col">Size</th>
+            </tr>
+            </thead>
+            <tbody>
+            {this.showthePackages()}
+            </tbody>
+
+          
+          
+        
+        </table>
+        </div>
+       
         <br />
         <Link to={`/allpackages/${this.state.thetrip._id}`}>Add Packages to Trip</Link>
       </div>

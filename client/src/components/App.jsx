@@ -41,7 +41,7 @@ export default class App extends Component {
             <span className="navbar-toggler-icon"></span>
           </button>  
 
-          <div className="collapse navbar-collapse" id="navbarNav">
+          <div className="navbar" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item active">
                 <NavLink to="/" exact>Home</NavLink>
