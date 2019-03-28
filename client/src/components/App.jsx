@@ -10,6 +10,7 @@ import TripDetails from './pages/TripDetails';
 import Packages from './pages/Packages';
 import AllPackages from './pages/AllPackages';
 import AddPackage from './pages/AddPackage';
+
 //import AddPtoTrip from './pages/AddPtoTrip';
 import Secret from './pages/Secret';
 import Login from './pages/Login';
